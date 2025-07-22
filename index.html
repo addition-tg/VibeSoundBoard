@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Soundboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+          "react/": "https://esm.sh/react@^19.1.0/",
+          "react": "https://esm.sh/react@^19.1.0",
+          "jszip": "https://esm.sh/jszip@3.10.1",
+          "idb": "https://esm.sh/idb@8.0.0",
+          "@google/genai": "https://esm.sh/@google/genai"
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --burgundy: #BA0F30;
+        --purple-haze: #2F2440;
+        --sand-dollar: #C6B79B;
+        --red: #FF2511;
+      }
+      body {
+        background-color: var(--purple-haze);
+        color: var(--sand-dollar);
+      }
+    </style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
