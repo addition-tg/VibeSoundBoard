@@ -13,12 +13,13 @@ export const SOUNDS: Omit<Sound, 'id' | 'url'>[] = [
   { name: 'You\'re welcome', icon: <SpeakerWaveIcon /> },
   { name: 'to love', icon: <SpeakerWaveIcon /> },
   { name: 'society', icon: <FaceSmileIcon /> },
-  { name: 'hello', icon: <ExclamationTriangleIcon /> },
-  { name: 'nice to meet you', icon: <SparklesIcon /> },
+  { name: 'thank you', icon: <FaceSmileIcon /> },
+  { name: 'hello', icon: <SpeakerWaveIcon /> },
+  { name: 'nice to meet you', icon: <FaceSmileIcon /> },
   { name: 'beautiful', icon: <BellIcon /> },
-  { name: 'potato', icon: <MusicNoteIcon /> },
+  { name: 'potato', icon: <SparklesIcon /> },
   { name: 'bicycle', icon: <FaceSmileIcon /> },
-  { name: 'amphitheater', icon: <SpeakerWaveIcon /> }
+  { name: 'amphitheater', icon: <SparklesIcon /> }
 ];
 
 const SOUND_URLS = [
