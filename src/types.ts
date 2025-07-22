@@ -1,4 +1,3 @@
-
 import type { ReactNode } from 'react';
 
 // This is the data structure for the app's state, used for rendering

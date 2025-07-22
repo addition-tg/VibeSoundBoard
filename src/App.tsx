@@ -1,8 +1,7 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { GoogleGenAI } from '@google/genai';
 import SoundButton from './components/SoundButton';
-import { SOUNDS as defaultSounds } from './constants/sounds';
+import { defaultSounds } from './constants/sounds';
 import type { Sound, StorableSound } from './types';
 import { getSound, setSound, clearSounds } from './db';
 import {
@@ -68,10 +67,10 @@ const App: React.FC = () => {
           }
         } catch (error) {
           console.error("Failed to restore sounds from localStorage:", error);
-          restoredSounds = defaultSounds.map((s, i) => ({ ...s, id: `default-${i}` }));
+          restoredSounds = [...defaultSounds];
         }
       } else {
-        restoredSounds = defaultSounds.map((s, i) => ({ ...s, id: `default-${i}` }));
+        restoredSounds = [...defaultSounds];
       }
       
       soundBlobUrls.current = blobUrls;
@@ -255,8 +254,7 @@ const App: React.FC = () => {
     localStorage.removeItem(LOCAL_STORAGE_KEY_SOUNDS);
     soundBlobUrls.current.forEach(URL.revokeObjectURL);
     soundBlobUrls.current = [];
-    const defaultSoundsWithIds = defaultSounds.map((s, i) => ({ ...s, id: `default-${i}` }));
-    setSounds(defaultSoundsWithIds);
+    setSounds([...defaultSounds]);
     setIsLoading(false);
   };
   

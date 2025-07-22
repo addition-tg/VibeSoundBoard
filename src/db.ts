@@ -1,4 +1,3 @@
-
 import { openDB, DBSchema } from 'idb';
 
 interface SoundboardDB extends DBSchema {

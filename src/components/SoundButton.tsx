@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import type { Sound } from '../types';
 
@@ -11,6 +10,9 @@ const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
+    if (audioRef.current) {
+        audioRef.current.pause();
+    }
     audioRef.current = new Audio(sound.url);
     const audio = audioRef.current;
     
@@ -29,15 +31,21 @@ const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       audio.removeEventListener('playing', handlePlay);
       audio.removeEventListener('ended', handleEnd);
       audio.removeEventListener('pause', handleEnd);
-      audio.pause();
+      if (!audio.paused) {
+          audio.pause();
+      }
     };
   }, [sound.url]);
 
   const playSound = useCallback(() => {
     const audio = audioRef.current;
     if (audio) {
-      audio.currentTime = 0;
-      audio.play().catch(error => console.error(`Error playing sound: ${sound.name}`, error));
+      if (!audio.paused) {
+        audio.pause();
+        audio.currentTime = 0;
+      } else {
+        audio.play().catch(error => console.error(`Error playing sound: ${sound.name}`, error));
+      }
     }
   }, [sound.name]);
   
