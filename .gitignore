@@ -1,3 +1,6 @@
+# Gemini API key file name
+key.txt
+
 # Logs
 logs
 *.log
