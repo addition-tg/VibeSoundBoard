@@ -330,6 +330,7 @@ const App: React.FC = () => {
         </div>
         
         <div className="text-center text-sand-dollar/70 text-xs sm:text-sm mb-6 max-w-4xl mx-auto space-y-1">
+            <p><strong className="text-white">GitHub repository:</strong><a href="https://github.com/addition-tg/VibeSoundBoard">https://github.com/addition-tg/VibeSoundBoard</a></p>
             <p>
                 <strong className="text-white">How to Load Sounds:</strong> Use the buttons above to load from a <strong className="text-white">Folder</strong> or a <strong className="text-white">.txt list of URLs</strong>.
             </p>
